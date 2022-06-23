@@ -1,0 +1,89 @@
+.containerr{
+  background-color: whitesmoke;
+  width: 100%;
+  .nav_container{
+      background-color: #00000000;
+      height: 50px;
+      img{
+          width: 100px;
+          height: 50px;
+          filter: invert(1);
+          margin-left: 50px;
+      }
+  }
+  
+  .container_body{
+      // display: flex;
+      text-align: center;
+      background-color: white;
+      height: 100%;
+      padding: 10px;
+      padding-bottom: 50px;
+      .container_head{
+          h1{
+              color: black;
+          }
+          p {
+              color:green
+          }
+      }
+      .container_main{
+          margin-top: 100px;
+          .paste_text{
+          .file{
+              width: 250px;
+              background-color: green;
+              color:white;
+              height: 50px;
+              border-radius: 15px;
+          }
+          .file_p{
+              color:grey;
+              font-size:18px;
+              
+          }&:hover{
+              text-decoration: underline;
+          }
+      }
+          textarea{
+              background-color: white;
+              height: 300px;
+              width: 800px;
+              color:black
+          }
+          .actions{
+              margin: 0 350px;
+              margin-top: 10px;
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              button{
+                  background-color: whitesmoke;
+                  box-shadow:1px 1px 0px 1px grey
+              }
+          }
+      }
+      
+      .upload{
+          width: 50%;
+          .paste_text{
+              display: flex;
+              justify-content: space-around;
+          }
+          .dropbox{
+              height: 300px;
+              border: 1px solid green;
+          }
+          .actions{
+              margin-top: 10px;
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap;
+          }
+      }
+  }
+  .container-info{
+      text-align: center;
+      padding: 10px;
+  }
+}
