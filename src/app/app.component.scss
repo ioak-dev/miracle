@@ -28,7 +28,7 @@
           }
       }
       .container_main{
-          margin-top: 95px;
+          margin-top: 20px;
           .paste_text{
           .file{
               width: 250px;
@@ -41,8 +41,41 @@
               color:grey;
               font-size:18px;
               
-          }&:hover{
+          &:hover{
               text-decoration: underline;
+          }
+        }
+          
+          input[type="file"] {
+            position: absolute;
+            z-index: -1;
+            top: 15px;
+            left: 20px;
+            font-size: 17px;
+            color: #b8b8b8;
+          }
+          .button-wrap {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+          }
+          .button {
+            display: inline-block;
+            background-color: #1d6355;
+            border-radius: 10px;
+            border: 4px double #cccccc;
+            color: #ffffff;
+            text-align: center;
+            font-size: 20px;
+            padding: 8px;
+            width: 175px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+          }
+          .button:hover {
+            background-color: #00ab97;
           }
       }
           textarea{
@@ -52,14 +85,41 @@
               color:black
           }
           .actions{
-              margin: 0 350px;
-              margin-top: 10px;
-              display: flex;
-              justify-content: space-between;
-              flex-wrap: wrap;
+            //   margin: 0 350px;
+            //   margin-top: 10px;
+            //   display: flex;
+            //   justify-content: space-between;
+            //   flex-wrap: wrap;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 10px;
               button{
                   background-color: whitesmoke;
-                  box-shadow:1px 1px 0px 1px grey
+                  box-shadow:1px 1px 0px 1px grey;
+                  &:hover{
+                    background-color: #1d6355;
+                    color:white
+                  }
+                  
+              }
+          }
+          .format-json{
+              background-color: #1d6355;
+              text-align: left;
+              max-width: 800px;
+              padding:15px;
+              margin:25px auto;
+          }
+          .download{
+              background-color: aliceblue;
+              padding: 10px;
+              border: 1px solid grey;
+              margin: 0 350px;
+              margin-top: 40px;
+              border-radius: 10px;
+              a{
+                  color: green;
               }
           }
       }

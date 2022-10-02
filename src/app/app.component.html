@@ -9,18 +9,30 @@
       </div>
       <div class="container_main">
         <div class="paste_text">
-        <button type="button" class="btn btn-light file">Upload File</button>
-        <p class="file_p" (click)="opentextArea()">or paste text</p>
+        <!-- <button type="button" class="btn btn-light file">Upload File</button> -->
+        <div class="button-wrap">
+          <label class="button" for="upload">Upload File</label>
+          <span>{{fileName}}</span>
+          <input id="upload" type="file" (change)="fileChange($event)">
+          
+        </div>
+        <a class="btn btn-clear" title="Download JSON" [href]="downloadJsonHref" download="download.json"></a>
+      <p class="file_p" (click)="opentextArea()">or paste text</p>
       </div>
       <div *ngIf="textArea">
-        <textarea class="text_area"></textarea>
+        <textarea [(ngModel)]="jsonData" class="text_area"></textarea>
       </div>
       <div class="actions">
-        <button type="button" class="btn btn-light">Format</button>
-        <button type="button" class="btn btn-light">Inspect</button>
-        <button type="button" class="btn btn-light">Convert to CSV</button>
-        <button type="button" class="btn btn-light">Flatten Relatioal</button>
-        <button type="button" class="btn btn-light">Flatten Traditional</button>
+        <button type="button" class="btn btn-light" (click)="format()">Format</button>
+        <button type="button" class="btn btn-light" (click)="getCSV()">Convert to CSV</button>
+        <button type="button" class="btn btn-light" (click)="getFlatten()">Flatten Relatioal</button>
+        <button type="button" class="btn btn-light" (click)="getFlattenTraditional()">Flatten Traditional</button>
+      </div>
+      <!-- <pre>{{formatedText | json}}</pre> -->
+     <div *ngIf="formatJson" class="format-json"> <pre [innerHTML]="formatedText | prettyjson: [true, 3]"></pre></div>
+      <div class="download" *ngIf="isDownloadReady">
+        <span>Your Json content has successfully flattened and your processed output is ready</span>
+        <a class="btn btn-clear" title="Download JSON" [href]="downloadJsonHref" download="output.json">Download result</a>
       </div>
     </div>
     </div>
